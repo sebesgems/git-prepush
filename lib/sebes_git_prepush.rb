@@ -2,8 +2,8 @@
 
 require_relative 'sebes_git_prepush/version'
 
-require 'rake'
-load File.expand_path('../tasks/my_task.rake', __FILE__)
-
 module SebesGitPrepush
+  ROOT = File.dirname __dir__
+
+  load File.expand_path('tasks/install.rake', __dir__)
 end
