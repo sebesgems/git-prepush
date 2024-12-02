@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "here"
+
 git fetch
 
 if [ $(git rev-parse HEAD) != $(git rev-parse @{u}) ]; then
