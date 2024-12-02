@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "here"
+echo "heres"
 
 git fetch
 
