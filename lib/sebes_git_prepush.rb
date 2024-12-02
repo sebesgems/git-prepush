@@ -2,7 +2,8 @@
 
 require_relative 'sebes_git_prepush/version'
 
-require 'sebes_git_prepush/railtie' if defined?(Rails::Railtie)
+require 'rake'
+load File.expand_path('../tasks/my_task.rake', __FILE__)
 
 module SebesGitPrepush
 end
