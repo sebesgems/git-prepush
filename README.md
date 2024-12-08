@@ -1,6 +1,7 @@
 # Sebes Git Prepush
 
-This gem installs prepush scripts to go through all checkers
+This gem installs prepush scripts to go through all checkers. 
+It will be automaticaly installed.
 
 ## Install into the project
 Add to Gemfile:
@@ -34,9 +35,9 @@ bundle config --local github.com -> LastPass -> Shared-dev -> SEBES_GEM_TOKEN
 ```
 
 
-## Usage
+## Manually install
 
-Install it using rake job:
+Tou can nstall it manually using rake job:
 
 ```
 rake sebes_git_prepush:install

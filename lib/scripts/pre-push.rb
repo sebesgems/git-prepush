@@ -12,7 +12,7 @@ def remote_same?
   `git rev-parse HEAD` == `git rev-parse @{u}`
 end
 
-return if !remote_exist? || remote_same?
+return `exit 1` if !remote_exist? || remote_same?
 
 [
   'bundle exec rubocop',
@@ -20,5 +20,5 @@ return if !remote_exist? || remote_same?
   'bundle exec brakeman --exit-on-warn --no-summary',
   'bundle exec rails test'
 ].each do |script|
-  break unless system script
+  return `system 1` unless system script
 end
