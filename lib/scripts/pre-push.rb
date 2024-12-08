@@ -1,5 +1,12 @@
 #!/usr/bin/env ruby
 
+CHECKERS = [
+  'bundle exec rubocop',
+  'srb typecheck',
+  'bundle exec brakeman --exit-on-warn --no-summary',
+  'bundle exec rails test'
+].freeze
+
 system 'git fetch'
 
 def remote_exist?
@@ -12,13 +19,10 @@ def remote_same?
   `git rev-parse HEAD` == `git rev-parse @{u}`
 end
 
-return `exit 1` if !remote_exist? || remote_same?
-
-[
-  'bundle exec rubocop',
-  'srb typecheck',
-  'bundle exec brakeman --exit-on-warn --no-summary',
-  'bundle exec rails test'
-].each do |script|
-  return `system 1` unless system script
+if !remote_exist? || remote_same?
+  `exit 1`
+else
+  CHECKERS.each do |script|
+    return `exit 1` unless system script
+  end
 end
