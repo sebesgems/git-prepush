@@ -10,7 +10,8 @@ namespace :sebes_git_prepush do
     puts 'Installing bin/pre-push...'
     system "[ -f bin/pre-push ] && rm bin/pre-push"
     system "ln -s #{__dir__}/../../lib/scripts/pre-push bin/pre-push"
-    
+    system "chmod +x bin/pre-push"
+
     puts 'Done!'
   end
 end
