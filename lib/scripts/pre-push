@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+CHECKERS = [
+  'bundle exec rubocop',
+  'srb typecheck',
+  'bundle exec brakeman --exit-on-warn --no-summary',
+  'bundle exec rails test'
+].any? { |script| !system(script) }

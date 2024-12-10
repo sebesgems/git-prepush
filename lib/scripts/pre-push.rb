@@ -1,12 +1,5 @@
 #!/usr/bin/env ruby
 
-CHECKERS = [
-  'bundle exec rubocop',
-  'srb typecheck',
-  'bundle exec brakeman --exit-on-warn --no-summary --force',
-  'bundle exec rails test'
-].freeze
-
 system 'git fetch'
 
 def remote_exist?
@@ -20,7 +13,7 @@ def remote_same?
 end
 
 def any_checker_failed?
-  CHECKERS.any? { |script| !system(script) }
+  system("bin/pre-push")
 end
 
 exit 1 if !remote_exist? || remote_same? || any_checker_failed?
