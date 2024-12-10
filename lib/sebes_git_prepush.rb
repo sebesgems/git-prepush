@@ -13,7 +13,7 @@ module SebesGitPrepush
       git_dir = `git rev-parse --git-dir`.strip
 
       puts 'Installing hooks...'
-      sysmte "rm #{git_dir}/hooks/pre-push"
+      system "rm #{git_dir}/hooks/pre-push"
 
       system "ln -s #{__dir__}/../../lib/scripts/pre-push.rb #{git_dir}/hooks/pre-push"
       puts 'Done!'
