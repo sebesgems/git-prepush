@@ -2,7 +2,7 @@
 
 system 'git fetch'
 
-def remote_exist?
+def remote_exists?
   `git rev-parse --abbrev-ref --symbolic-full-name @{u}`.strip
 rescue StandardError
   nil
@@ -16,4 +16,6 @@ def any_checker_failed?
   system("bin/pre-push")
 end
 
-exit 1 if !remote_exist? || remote_same? || any_checker_failed?
+return if !remote_exists? || remote_same? 
+
+exit(1) if any_checker_failed?
