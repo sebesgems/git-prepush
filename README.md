@@ -6,7 +6,9 @@ It will be automaticaly installed.
 ## Install into the project
 Add to Gemfile:
 ```
-gem "sebes_git_prepush", group: %i[development test], git: "https://github.com/sebesgems/git-prepush.git"
+group :development, :test do
+  gem "sebes_git_prepush", require: false git: "https://github.com/sebesgems/git-prepush.git"
+end
 ```
 You have to add both locally and to the DigitalOcean server env:
 ```
