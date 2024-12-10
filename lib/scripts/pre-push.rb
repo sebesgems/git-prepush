@@ -3,7 +3,7 @@
 CHECKERS = [
   'bundle exec rubocop',
   'srb typecheck',
-  'bundle exec brakeman --exit-on-warn --no-summary',
+  'bundle exec brakeman --exit-on-warn --no-summary --force',
   'bundle exec rails test'
 ].freeze
 
