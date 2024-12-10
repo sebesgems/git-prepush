@@ -12,10 +12,10 @@ def remote_same?
   `git rev-parse HEAD` == `git rev-parse @{u}`
 end
 
-def any_checker_failed?
+def valid_checkers?
   system("bin/pre-push")
 end
 
 return if !remote_exists? || remote_same? 
 
-exit(1) if any_checker_failed?
+exit(1) unless valid_checkers?

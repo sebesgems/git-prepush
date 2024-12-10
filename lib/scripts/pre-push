@@ -5,4 +5,6 @@ CHECKERS = [
   'srb typecheck',
   'bundle exec brakeman --exit-on-warn --no-summary',
   'bundle exec rails test'
-].any? { |script| !system(script) }
+].freeze
+
+exit(1) if CHECKERS.any? { |script| !system(script) }
