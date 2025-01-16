@@ -1,1 +1,1 @@
-Dir['lib/tasks/**/*.rake'].each { |r| import r }
+Dir['lib/tasks/*.rake'].each { |r| import r }
