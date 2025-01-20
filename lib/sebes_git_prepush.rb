@@ -6,7 +6,7 @@ require 'rake'
 module SebesGitPrepush
   ROOT = File.dirname __dir__
 
-  load File.expand_path('../tasks/install.rake', __dir__)
+  load File.expand_path('../lib/tasks/install.rake', __dir__)
 
   class Hook
     def self.after_install_or_update_spec(_spec)
