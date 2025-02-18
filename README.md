@@ -13,7 +13,7 @@ You can modify scripts which are there in case you don't need some of them
 Add to Gemfile:
 ```
 group :development, :test do
-  gem "sebes_git_prepush", require: false git: "https://github.com/sebesgems/git-prepush.git"
+  gem "sebes_git_prepush", git: "https://github.com/sebesgems/git-prepush.git" # It should be required!
 end
 ```
 You have to add both locally and to the DigitalOcean server env:
