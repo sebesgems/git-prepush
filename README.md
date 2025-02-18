@@ -8,6 +8,14 @@ It will be automaticaly installed.
 It will create a file bin/pre-push. This file is executable `bin/pre-push`.
 You can modify scripts which are there in case you don't need some of them 
 
+## Install
+
+After gem is installed please run:
+
+```
+rake sebes_git_prepush:install
+```
+
 
 ## Install into the project
 Add to Gemfile:
@@ -40,13 +48,4 @@ SEBES_GEM_TOKEN=-> LastPass -> Shared-dev -> SEBES_GEM_TOKEN
 
 ```
 bundle config --local github.com -> LastPass -> Shared-dev -> SEBES_GEM_TOKEN
-```
-
-
-## Manually install
-
-Tou can nstall it manually using rake job:
-
-```
-rake sebes_git_prepush:install
 ```
