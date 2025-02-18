@@ -9,6 +9,8 @@ Gem::Specification.new do |spec|
 
   spec.summary = 'Allows to interact with Digital Ocean'
 
+  spec.post_install_message = "Git push has been installed! If not please run `rake sebes_git_prepush:install`"
+
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   gemspec = File.basename(__FILE__)
