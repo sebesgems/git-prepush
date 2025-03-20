@@ -13,9 +13,9 @@ def remote_same?
 end
 
 def valid_checkers?
-  system("bin/pre-push")
+  system('bin/pre-push')
 end
 
-return if !remote_exists? || remote_same? 
+return if !remote_exists? || remote_same?
 
 exit(1) unless valid_checkers?
