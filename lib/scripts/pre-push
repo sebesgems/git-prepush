@@ -4,6 +4,7 @@ CHECKERS = [
   'bundle exec rubocop',
   'srb typecheck',
   'bundle exec brakeman --exit-on-warn --no-summary',
+  'RAILS_ENV=test bundle exec database_consistency',
   'bundle exec rails test'
 ].freeze
 
