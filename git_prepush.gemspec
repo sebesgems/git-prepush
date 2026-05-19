@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.version = GitPrepush::VERSION
   spec.authors = ['Sebes Technology ltd']
 
-  spec.summary = 'Allows to interact with Digital Ocean'
+  spec.summary = 'Installs a pre-push git hook that auto-detects and runs project health checks (RuboCop, Sorbet, Brakeman, DatabaseConsistency, tests).'
 
   spec.post_install_message = 'Git push has been installed! If not please run `rake git_prepush:install`'
 
